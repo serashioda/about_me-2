@@ -1,2 +1,3 @@
 # about_me
-This is my About Me project for Code 201. 
+Driver: Sera
+Navigator: Adrian 
