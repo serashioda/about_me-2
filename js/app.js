@@ -5,9 +5,9 @@ console.log(userName);
 
 // guessing game
 
-var correctAnswers = 0;
-
 alert('Hi, ' + userName + ', welcome! Let\'s see if you can answer some questions about me! Please answer yes/no or y/n.');
+
+var correctAnswers = 0;
 
 var answer1 = prompt('Is Adrian from Montreal, QC?').toUpperCase();
 console.log(answer1);
@@ -59,13 +59,9 @@ if (answer5 === 'NO' || answer5 === 'N') {
 var age = 29;
 
 for (var i = 0; i < 4; i++) {
-  var ageAnswer = prompt('How old is Adrian?');
-  if ((i === 3) && (ageAnswer !== age)) {
-    alert('You ran out of guesses. Soary aboot it!');
-    console.log(ageAnswer);
-    break;
-  }
-  if (ageAnswer == age) {
+  var ageAnswer = parseInt(prompt('How old is Adrian?'));
+  console.log('User response is ' + ageAnswer + ' to question.');
+  if (ageAnswer === age) {
     alert('You\'re right! Adrian is ' + age + ' years old!');
     console.log(ageAnswer);
     correctAnswers ++;
@@ -78,7 +74,11 @@ for (var i = 0; i < 4; i++) {
     console.log(ageAnswer);
   } else if (isNaN(ageAnswer) === true) {
     alert('That is not a number. Try again!');
+  };
+  if ((i === 3) && (ageAnswer !== age)) {
+    alert('You ran out of guesses. Soary aboot it!');
     console.log(ageAnswer);
+    break;
   }
 }
 
@@ -105,8 +105,7 @@ while (guesses < 6) {
   }
   guesses ++;
 }
-// ask sam why this alert displays even when user enters correct element before the full 6 guesses are up!!! >:O
-if (userCorrect = true) {
+if (userCorrect === false) {
   alert('You guess too many times! Here\'s a list of the pokemon I caught: ' + pokemon);
   console.log(pokeAnswer);
 }
