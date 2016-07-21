@@ -68,6 +68,7 @@ for (var i = 0; i < 4; i++) {
   if (ageAnswer == age) {
     alert('You\'re right! Adrian is ' + age + ' years old!');
     console.log(ageAnswer);
+    correctAnswers ++;
     break;
   } else if (ageAnswer > age) {
     alert('You guessed too high! Guess again.');
@@ -86,7 +87,7 @@ for (var i = 0; i < 4; i++) {
 var pokemon = ['pikachu', 'zubat', 'drowzee', 'onyx', 'charmander', 'snorlax'];
 var guesses = 0;
 
-while (guesses < 7) {
+while (guesses < 6) {
   var pokeAnswer = prompt('What Pokemon did I catch? All you need to do is guess 1 of the Pokemon I caught.').toLowerCase();
   for (var i = 0; i < pokemon.length; i++) {
     if (pokeAnswer === pokemon[i]) {
@@ -94,17 +95,18 @@ while (guesses < 7) {
       console.log(pokeAnswer);
       correctAnswers ++;
       userCorrect = true;
-      guesses = 7;
+      guesses = 6;
       break;
     }
   }
-  if (guesses !== 7) {
+  if (guesses !== 6) {
     alert('You got it wrong! Sorry, try again!');
     console.log(pokeAnswer);
   }
   guesses ++;
 }
-if (userCorrect = false) {
+// ask sam why this alert displays even when user enters correct element before the full 6 guesses are up!!! >:O
+if (userCorrect = true) {
   alert('You guess too many times! Here\'s a list of the pokemon I caught: ' + pokemon);
   console.log(pokeAnswer);
 }
